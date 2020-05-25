@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red {
+            color: orange;
+        }
+
+        .blue {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="chloe">
+        hey,{{name}}
+        {{description}}
+        <span id="Yona">
+            {{description}}
+        </span>
+        <input type="text" v-model="obj.y" v-on:keydown="enter" />
+        {{obj.y}}
+        <ul>
+            <li v-for="(key) in list">
+                name: {{key.a}} age: {{key.b}}
+            </li>
+        </ul>
+        <img v-bind:src="imgSrc">
+        <br />
+        <span v-bind:class="haha">oh my sky</span>
+        <br />
+    </div>
+
+    <script type="module">
+        import Due from './core/index.js';
+        window.temp = new Due({
+            el: 'chloe',
+            data: {
+                name: 'BAYONETTA',
+                description: 'hahah',
+                obj: {
+                    x: 3,
+                    y: 5
+                },
+                list: [{a: 'Yona', b: 20}, {a: 'Sena', b: 21}],
+                imgSrc: 'girl.jpg',
+                haha: 'red'
+            },
+            methods: {
+                enter: function() {
+                    console.log('hello');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
